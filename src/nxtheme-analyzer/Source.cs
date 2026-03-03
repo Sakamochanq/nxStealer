@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using nxtheme_analyzer.utils;
+using System;
+using System.IO;
+using System.Text.Json;
 using System.Windows.Forms;
 
 namespace nxtheme_analyzer
@@ -15,6 +11,16 @@ namespace nxtheme_analyzer
         public Source()
         {
             InitializeComponent();
+        }
+
+        private void OpenButton_Click(object sender, EventArgs e)
+        {
+            using (var ofd = new OpenFileDialog() {Filter = "nxtheme File (*.nxtheme) | *.nxtheme;" })
+            {
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                }
+            }
         }
     }
 }
