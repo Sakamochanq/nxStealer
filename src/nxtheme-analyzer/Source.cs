@@ -19,6 +19,7 @@ namespace nxtheme_analyzer
             {
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
+                    NxTheme nxTheme = new NxTheme(ofd.FileName);
                 }
             }
         }
