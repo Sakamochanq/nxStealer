@@ -50,8 +50,6 @@
             this.ImageBox = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.SaveImageButton = new System.Windows.Forms.Button();
-            this.DownloadButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -224,13 +222,13 @@
             // LogTextBox
             // 
             this.LogTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.LogTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.LogTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.LogTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
             this.LogTextBox.Location = new System.Drawing.Point(12, 229);
             this.LogTextBox.Multiline = true;
             this.LogTextBox.Name = "LogTextBox";
             this.LogTextBox.ReadOnly = true;
-            this.LogTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.LogTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.LogTextBox.Size = new System.Drawing.Size(389, 144);
             this.LogTextBox.TabIndex = 13;
             // 
@@ -274,33 +272,11 @@
             this.label7.TabIndex = 16;
             this.label7.Text = "None (0 bytes)";
             // 
-            // SaveImageButton
-            // 
-            this.SaveImageButton.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.SaveImageButton.Location = new System.Drawing.Point(415, 229);
-            this.SaveImageButton.Name = "SaveImageButton";
-            this.SaveImageButton.Size = new System.Drawing.Size(248, 44);
-            this.SaveImageButton.TabIndex = 17;
-            this.SaveImageButton.Text = "Save Image";
-            this.SaveImageButton.UseVisualStyleBackColor = true;
-            // 
-            // DownloadButton
-            // 
-            this.DownloadButton.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.DownloadButton.Location = new System.Drawing.Point(415, 279);
-            this.DownloadButton.Name = "DownloadButton";
-            this.DownloadButton.Size = new System.Drawing.Size(248, 44);
-            this.DownloadButton.TabIndex = 19;
-            this.DownloadButton.Text = "Download Layout.json";
-            this.DownloadButton.UseVisualStyleBackColor = true;
-            // 
             // Source
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(675, 407);
-            this.Controls.Add(this.DownloadButton);
-            this.Controls.Add(this.SaveImageButton);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.ImageBox);
@@ -351,8 +327,6 @@
         private System.Windows.Forms.PictureBox ImageBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button SaveImageButton;
-        private System.Windows.Forms.Button DownloadButton;
     }
 }
 

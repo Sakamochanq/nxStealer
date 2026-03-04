@@ -1,7 +1,5 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Text.Json;
-using System.Windows.Forms;
 
 namespace nxtheme_analyzer.utils
 {
@@ -51,12 +49,9 @@ namespace nxtheme_analyzer.utils
         // NxThemeのバージョン
         public int Version()
         {
-            if (doc.RootElement.TryGetProperty("Version", out JsonElement ver))
+            if (doc.RootElement.TryGetProperty("Version", out JsonElement veriosn))
             {
-                if (ver.ValueKind == JsonValueKind.Number && ver.TryGetInt32(out int version))
-                {
-                    return version;
-                }
+                return veriosn.GetInt32();
             }
             return 0;
         }
