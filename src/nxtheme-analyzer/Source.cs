@@ -3,6 +3,7 @@ using System;
 using System.IO;
 using System.Windows.Forms;
 using System.Drawing;
+using static System.Windows.Forms.DataFormats;
 
 namespace nxtheme_analyzer
 {
@@ -34,6 +35,15 @@ namespace nxtheme_analyzer
                         VersionLabel.Text = $"{nxTheme.Version()}";
                         TargetLabel.Text = $"{nxTheme.Target()}";
 
+                        try
+                        {
+                            ImageBox.Image = nxTheme.GetImage();
+                        }
+                        catch(Exception ex)
+                        {
+                            StatusLabel.Text = ex.Message;
+                        }
+
                         Analyzing();
 
                         StatusLabel.ForeColor = Color.Green;
@@ -45,8 +55,6 @@ namespace nxtheme_analyzer
                         StatusLabel.Text = $"Error : {ex.Message}";
                         MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
-
-                    //ImageBox.Image = nxTheme.GetImage();
                 }
             }
         }

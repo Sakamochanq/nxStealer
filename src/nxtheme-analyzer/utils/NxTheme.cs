@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Text.Json;
 
 namespace nxtheme_analyzer.utils
@@ -8,15 +10,19 @@ namespace nxtheme_analyzer.utils
         // SARCアーカイブから抽出した info.json  
         private string infoJson;
 
-        //初期化
+        // 初期化
         private JsonDocument doc;
+
+        // 解凍したデータ
+        private byte[] decompressed;
 
         public NxTheme(string filePath)
         {
             // ファイルを読み込み  
             byte[] fileData = File.ReadAllBytes(filePath);
+            
             // Yaz0解凍  
-            byte[] decompressed = Yaz0.Decompress(fileData);
+           decompressed = Yaz0.Decompress(fileData);
 
             // SARCアーカイブから info.json を抽出  
             infoJson = Sarc.Extract(decompressed);
@@ -34,7 +40,6 @@ namespace nxtheme_analyzer.utils
             }
             return null;
         }
-
 
         // テーマ名
         public string Name()
@@ -62,6 +67,33 @@ namespace nxtheme_analyzer.utils
             if (doc.RootElement.TryGetProperty("Target", out JsonElement target))
             {
                 return target.GetString();
+            }
+            return null;
+        }
+
+        // 設定されている画像を取得
+        public Image GetImage()
+        {
+            // PNG, JPG形式の画像をサーチ
+            string[] imageFiles = { "image.jpg", "image.png" };
+
+            foreach (string fileName in imageFiles)
+            {
+                try
+                {
+                    byte[] imageData = Sarc.ExtractFileBytes(decompressed, fileName);
+                    if (imageData != null && imageData.Length > 0)
+                    {
+                        using (var ms = new MemoryStream(imageData))
+                        {
+                            return Image.FromStream(ms);
+                        }
+                    }
+                }
+                catch
+                {
+                    continue;
+                }
             }
             return null;
         }

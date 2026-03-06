@@ -11,8 +11,19 @@ namespace nxtheme_analyzer.utils
             return ExtractFile(data, "info.json");
         }
 
-        // SARCからファイルを抽出
         public static string ExtractFile(byte[] data, string targetFileName)
+        {
+            byte[] fileBytes = ExtractFileBytes(data, targetFileName);
+            return Encoding.UTF8.GetString(fileBytes);
+        }
+
+        public static byte[] ExtractFileBytes(byte[] data, string targetFileName)
+        {
+            return ExtractFileInternal(data, targetFileName);
+        }
+
+        // SARCからファイルを抽出
+        public static byte[] ExtractFileInternal(byte[] data, string targetFileName)
         {
             // SARCの有無を確認
             if (data.Length < 20 ||
@@ -85,7 +96,11 @@ namespace nxtheme_analyzer.utils
 
                     if (dataOffset + dataSize <= data.Length)
                     {
-                        return Encoding.UTF8.GetString(data, dataOffset, dataSize);
+                        //return Encoding.UTF8.GetString(data, dataOffset, dataSize);
+
+                        byte[] result = new byte[dataSize];
+                        Array.Copy(data, dataOffset, result, 0, dataSize);
+                        return result;
                     }
                     else
                     {
