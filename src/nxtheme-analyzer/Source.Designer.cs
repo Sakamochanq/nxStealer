@@ -49,7 +49,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.ImageBox = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.ImageStatsLabel = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.NxThemePathBox = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
@@ -65,7 +65,7 @@
             this.fileFToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(675, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(677, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -114,7 +114,7 @@
             this.StatusLabel});
             this.statusStrip1.Location = new System.Drawing.Point(0, 429);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(675, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(677, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -231,7 +231,7 @@
             this.LogTextBox.Name = "LogTextBox";
             this.LogTextBox.ReadOnly = true;
             this.LogTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.LogTextBox.Size = new System.Drawing.Size(389, 144);
+            this.LogTextBox.Size = new System.Drawing.Size(653, 144);
             this.LogTextBox.TabIndex = 13;
             // 
             // label5
@@ -264,15 +264,15 @@
             this.label6.TabIndex = 16;
             this.label6.Text = "Image:";
             // 
-            // label7
+            // ImageStatsLabel
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label7.Location = new System.Drawing.Point(460, 82);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(89, 13);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "None (0 bytes)";
+            this.ImageStatsLabel.AutoSize = true;
+            this.ImageStatsLabel.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.ImageStatsLabel.Location = new System.Drawing.Point(460, 82);
+            this.ImageStatsLabel.Name = "ImageStatsLabel";
+            this.ImageStatsLabel.Size = new System.Drawing.Size(89, 13);
+            this.ImageStatsLabel.TabIndex = 16;
+            this.ImageStatsLabel.Text = "None (0 bytes)";
             // 
             // label8
             // 
@@ -280,27 +280,27 @@
             this.label8.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label8.Location = new System.Drawing.Point(12, 45);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(106, 13);
+            this.label8.Size = new System.Drawing.Size(63, 13);
             this.label8.TabIndex = 14;
-            this.label8.Text = "Loaded NxTheme:";
+            this.label8.Text = "NxTheme:";
             // 
             // NxThemePathBox
             // 
             this.NxThemePathBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.NxThemePathBox.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.NxThemePathBox.Location = new System.Drawing.Point(125, 41);
+            this.NxThemePathBox.Location = new System.Drawing.Point(83, 41);
             this.NxThemePathBox.Name = "NxThemePathBox";
             this.NxThemePathBox.ReadOnly = true;
-            this.NxThemePathBox.Size = new System.Drawing.Size(540, 19);
+            this.NxThemePathBox.Size = new System.Drawing.Size(582, 19);
             this.NxThemePathBox.TabIndex = 17;
             // 
             // Source
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(675, 451);
+            this.ClientSize = new System.Drawing.Size(677, 451);
             this.Controls.Add(this.NxThemePathBox);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.ImageStatsLabel);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.ImageBox);
             this.Controls.Add(this.label8);
@@ -350,7 +350,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox ImageBox;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label ImageStatsLabel;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox NxThemePathBox;
     }

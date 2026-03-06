@@ -4,6 +4,7 @@ using System.IO;
 using System.Windows.Forms;
 using System.Drawing;
 using static System.Windows.Forms.DataFormats;
+using System.Drawing.Imaging;
 
 namespace nxtheme_analyzer
 {
@@ -18,7 +19,7 @@ namespace nxtheme_analyzer
 
         private void OpenButton_Click(object sender, EventArgs e)
         {
-            using (var ofd = new OpenFileDialog() {Filter = "nxtheme File (*.nxtheme) | *.nxtheme;" })
+            using (var ofd = new OpenFileDialog() { Filter = "nxtheme File (*.nxtheme) | *.nxtheme;" })
             {
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
@@ -35,16 +36,11 @@ namespace nxtheme_analyzer
                         VersionLabel.Text = $"{nxTheme.Version()}";
                         TargetLabel.Text = $"{nxTheme.Target()}";
 
-                        try
-                        {
-                            ImageBox.Image = nxTheme.GetImage();
-                        }
-                        catch(Exception ex)
-                        {
-                            StatusLabel.Text = ex.Message;
-                        }
+                        // 画像を表示
+                        ImageBox.Image = nxTheme.GetImage();
 
-                        Analyzing();
+                        // ログ出力
+                        OutputLog();
 
                         StatusLabel.ForeColor = Color.Green;
                         StatusLabel.Text = "Analysis Successfully";
@@ -59,7 +55,7 @@ namespace nxtheme_analyzer
             }
         }
 
-        private void Analyzing()
+        private void OutputLog()
         {
             byte[] fileData = File.ReadAllBytes(filePath);
 
@@ -79,7 +75,6 @@ namespace nxtheme_analyzer
 
             LogTextBox.AppendText($"Decompressed size : {decompressed.Length:N0} byte\r\n");
             LogTextBox.AppendText($"First 4 byte : {decompressed[0]:X2} {decompressed[1]:X2} {decompressed[2]:X2} {decompressed[3]:X2}\r\n");
-
         }
     }
 }
