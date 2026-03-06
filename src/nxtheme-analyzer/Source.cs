@@ -2,6 +2,7 @@
 using System;
 using System.IO;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace nxtheme_analyzer
 {
@@ -20,18 +21,30 @@ namespace nxtheme_analyzer
             {
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    filePath = ofd.FileName;
-                    SatusLabel.Text = "NxTheme: " + filePath;
+                    try
+                    {
+                        filePath = ofd.FileName;
+                        NxThemePathBox.Text = filePath;
 
-                    NxTheme nxTheme = new NxTheme(filePath);
+                        NxTheme nxTheme = new NxTheme(filePath);
 
-                    // 情報を表示
-                    AuthorLabel.Text = $"{nxTheme.Author() ?? "---"}";
-                    NameLabel.Text = $"{nxTheme.Name() ?? "---"}";
-                    VersionLabel.Text = $"{nxTheme.Version()}";
-                    TargetLabel.Text = $"{nxTheme.Target()}";
+                        // 情報を表示
+                        AuthorLabel.Text = $"{nxTheme.Author() ?? "---"}";
+                        NameLabel.Text = $"{nxTheme.Name() ?? "---"}";
+                        VersionLabel.Text = $"{nxTheme.Version()}";
+                        TargetLabel.Text = $"{nxTheme.Target()}";
 
-                    Analyzing();
+                        Analyzing();
+
+                        StatusLabel.ForeColor = Color.Green;
+                        StatusLabel.Text = "Analysis Successfully";
+                    }
+                    catch (Exception ex)
+                    {
+                        StatusLabel.ForeColor = Color.Red;
+                        StatusLabel.Text = $"Error : {ex.Message}";
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
 
                     //ImageBox.Image = nxTheme.GetImage();
                 }

@@ -35,7 +35,7 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.ExitButton = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.SatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.AuthorLabel = new System.Windows.Forms.Label();
             this.NameLabel = new System.Windows.Forms.Label();
             this.VersionLabel = new System.Windows.Forms.Label();
@@ -50,6 +50,8 @@
             this.ImageBox = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.NxThemePathBox = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -109,18 +111,18 @@
             // 
             this.statusStrip1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.SatusLabel});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 385);
+            this.StatusLabel});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 429);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(675, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // SatusLabel
+            // StatusLabel
             // 
-            this.SatusLabel.Name = "SatusLabel";
-            this.SatusLabel.Size = new System.Drawing.Size(92, 17);
-            this.SatusLabel.Text = "NxTheme: None";
+            this.StatusLabel.Name = "StatusLabel";
+            this.StatusLabel.Size = new System.Drawing.Size(35, 17);
+            this.StatusLabel.Text = "Done";
             // 
             // AuthorLabel
             // 
@@ -212,7 +214,7 @@
             this.groupBox1.Controls.Add(this.VersionLabel);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.TargetLabel);
-            this.groupBox1.Location = new System.Drawing.Point(12, 40);
+            this.groupBox1.Location = new System.Drawing.Point(12, 85);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(389, 152);
             this.groupBox1.TabIndex = 12;
@@ -224,7 +226,7 @@
             this.LogTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.LogTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.LogTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.LogTextBox.Location = new System.Drawing.Point(12, 229);
+            this.LogTextBox.Location = new System.Drawing.Point(12, 274);
             this.LogTextBox.Multiline = true;
             this.LogTextBox.Name = "LogTextBox";
             this.LogTextBox.ReadOnly = true;
@@ -236,7 +238,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label5.Location = new System.Drawing.Point(12, 213);
+            this.label5.Location = new System.Drawing.Point(12, 258);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 13);
             this.label5.TabIndex = 14;
@@ -245,7 +247,7 @@
             // ImageBox
             // 
             this.ImageBox.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ImageBox.Location = new System.Drawing.Point(415, 52);
+            this.ImageBox.Location = new System.Drawing.Point(415, 97);
             this.ImageBox.Name = "ImageBox";
             this.ImageBox.Size = new System.Drawing.Size(250, 140);
             this.ImageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -256,30 +258,52 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label6.Location = new System.Drawing.Point(412, 37);
+            this.label6.Location = new System.Drawing.Point(412, 82);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(42, 13);
             this.label6.TabIndex = 16;
-            this.label6.Text = "Imgae:";
+            this.label6.Text = "Image:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label7.Location = new System.Drawing.Point(460, 37);
+            this.label7.Location = new System.Drawing.Point(460, 82);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(89, 13);
             this.label7.TabIndex = 16;
             this.label7.Text = "None (0 bytes)";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label8.Location = new System.Drawing.Point(12, 45);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(106, 13);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Loaded NxTheme:";
+            // 
+            // NxThemePathBox
+            // 
+            this.NxThemePathBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.NxThemePathBox.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.NxThemePathBox.Location = new System.Drawing.Point(125, 41);
+            this.NxThemePathBox.Name = "NxThemePathBox";
+            this.NxThemePathBox.ReadOnly = true;
+            this.NxThemePathBox.Size = new System.Drawing.Size(540, 19);
+            this.NxThemePathBox.TabIndex = 17;
+            // 
             // Source
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(675, 407);
+            this.ClientSize = new System.Drawing.Size(675, 451);
+            this.Controls.Add(this.NxThemePathBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.ImageBox);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.LogTextBox);
             this.Controls.Add(this.groupBox1);
@@ -312,7 +336,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem ExitButton;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel SatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel StatusLabel;
         private System.Windows.Forms.Label AuthorLabel;
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.Label VersionLabel;
@@ -327,6 +351,8 @@
         private System.Windows.Forms.PictureBox ImageBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox NxThemePathBox;
     }
 }
 
