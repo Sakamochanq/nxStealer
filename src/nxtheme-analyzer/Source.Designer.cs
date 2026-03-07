@@ -51,7 +51,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.ImageStatsLabel = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.NxThemePathBox = new System.Windows.Forms.TextBox();
+            this.PathBox = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -284,22 +284,22 @@
             this.label8.TabIndex = 14;
             this.label8.Text = "NxTheme:";
             // 
-            // NxThemePathBox
+            // PathBox
             // 
-            this.NxThemePathBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.NxThemePathBox.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.NxThemePathBox.Location = new System.Drawing.Point(83, 41);
-            this.NxThemePathBox.Name = "NxThemePathBox";
-            this.NxThemePathBox.ReadOnly = true;
-            this.NxThemePathBox.Size = new System.Drawing.Size(582, 19);
-            this.NxThemePathBox.TabIndex = 17;
+            this.PathBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PathBox.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.PathBox.Location = new System.Drawing.Point(83, 41);
+            this.PathBox.Name = "PathBox";
+            this.PathBox.ReadOnly = true;
+            this.PathBox.Size = new System.Drawing.Size(582, 19);
+            this.PathBox.TabIndex = 17;
             // 
             // Source
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(677, 451);
-            this.Controls.Add(this.NxThemePathBox);
+            this.Controls.Add(this.PathBox);
             this.Controls.Add(this.ImageStatsLabel);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.ImageBox);
@@ -352,7 +352,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label ImageStatsLabel;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox NxThemePathBox;
+        private System.Windows.Forms.TextBox PathBox;
     }
 }
 

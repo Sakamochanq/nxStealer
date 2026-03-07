@@ -26,7 +26,7 @@ namespace nxtheme_analyzer
                     try
                     {
                         filePath = ofd.FileName;
-                        NxThemePathBox.Text = filePath;
+                        PathBox.Text = filePath;
 
                         NxTheme nxTheme = new NxTheme(filePath);
 
@@ -37,7 +37,7 @@ namespace nxtheme_analyzer
                         TargetLabel.Text = $"{nxTheme.Target()}";
 
                         // 画像を表示
-                        ImageBox.Image = nxTheme.GetImage();
+                        ImageBox.Image = nxTheme.nxImage();
 
                         // ログ出力
                         OutputLog();

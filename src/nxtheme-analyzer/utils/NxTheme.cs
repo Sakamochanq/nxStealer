@@ -22,7 +22,7 @@ namespace nxtheme_analyzer.utils
             byte[] fileData = File.ReadAllBytes(filePath);
             
             // Yaz0解凍  
-           decompressed = Yaz0.Decompress(fileData);
+            decompressed = Yaz0.Decompress(fileData);
 
             // SARCアーカイブから info.json を抽出  
             infoJson = Sarc.Extract(decompressed);
@@ -54,9 +54,9 @@ namespace nxtheme_analyzer.utils
         // NxThemeのバージョン
         public int Version()
         {
-            if (doc.RootElement.TryGetProperty("Version", out JsonElement veriosn))
+            if (doc.RootElement.TryGetProperty("Version", out JsonElement version))
             {
-                return veriosn.GetInt32();
+                return version.GetInt32();
             }
             return 0;
         }
@@ -72,7 +72,7 @@ namespace nxtheme_analyzer.utils
         }
 
         // 設定されている画像を取得
-        public Image GetImage()
+        public Image nxImage()
         {
             // PNG, JPG形式の画像をサーチ
             string[] imageFiles = { "image.jpg", "image.png" };
