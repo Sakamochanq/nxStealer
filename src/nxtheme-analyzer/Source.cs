@@ -102,5 +102,15 @@ namespace nxtheme_analyzer
                 }
             }
         }
+
+        private void ReloadButton_Click(object sender, EventArgs e)
+        {
+            ImageBox.Refresh();
+        }
+
+        private void SaveImageButton2_Click(object sender, EventArgs e)
+        {
+            SaveImageButton_Click(sender, e);
+        }
     }
 }

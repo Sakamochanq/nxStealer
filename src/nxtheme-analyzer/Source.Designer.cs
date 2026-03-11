@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.NewButton = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,10 +55,15 @@
             this.PathBox = new System.Windows.Forms.TextBox();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveImageButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ReloadButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
+            this.SaveImageButton2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImageBox)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -250,6 +256,7 @@
             // ImageBox
             // 
             this.ImageBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ImageBox.ContextMenuStrip = this.contextMenuStrip1;
             this.ImageBox.Location = new System.Drawing.Point(415, 97);
             this.ImageBox.Name = "ImageBox";
             this.ImageBox.Size = new System.Drawing.Size(250, 140);
@@ -314,6 +321,34 @@
             this.SaveImageButton.Text = "To Image";
             this.SaveImageButton.Click += new System.EventHandler(this.SaveImageButton_Click);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ReloadButton,
+            this.toolStripMenuItem3,
+            this.SaveImageButton2});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 76);
+            // 
+            // ReloadButton
+            // 
+            this.ReloadButton.Name = "ReloadButton";
+            this.ReloadButton.Size = new System.Drawing.Size(180, 22);
+            this.ReloadButton.Text = "Reload ImageBox";
+            this.ReloadButton.Click += new System.EventHandler(this.ReloadButton_Click);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(177, 6);
+            // 
+            // SaveImageButton2
+            // 
+            this.SaveImageButton2.Name = "SaveImageButton2";
+            this.SaveImageButton2.Size = new System.Drawing.Size(180, 22);
+            this.SaveImageButton2.Text = "Save To Image";
+            this.SaveImageButton2.Click += new System.EventHandler(this.SaveImageButton2_Click);
+            // 
             // Source
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -342,6 +377,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImageBox)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -375,6 +411,10 @@
         private System.Windows.Forms.TextBox PathBox;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem SaveImageButton;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem ReloadButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem SaveImageButton2;
     }
 }
 
