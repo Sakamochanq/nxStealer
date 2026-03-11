@@ -96,6 +96,7 @@ namespace nxtheme_analyzer
                         {
                             ImageBox.Image.Save(dialog.FileName, ImageFormat.Jpeg);
                             LogTextBox.AppendText($"\r\nSuccess : Save Image {dialog.FileName}");
+                            OutputLog($"Save Image {dialog.FileName}", true);
                         }
                         catch (Exception ex)
                         {
