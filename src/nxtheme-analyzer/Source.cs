@@ -14,6 +14,13 @@ namespace nxtheme_analyzer
             InitializeComponent();
         }
 
+        private void WaitTimer_Tick(object sender, EventArgs e)
+        {
+            StatusLabel.ForeColor = Color.Black;
+            StatusLabel.Text = "Ready";
+            WaitTimer.Stop();
+        }
+
         string filePath;
 
         private void OpenButton_Click(object sender, EventArgs e)
@@ -39,22 +46,19 @@ namespace nxtheme_analyzer
                         ImageBox.Image = nxTheme.nxImage();
 
                         // ログ出力
-                        OutputLog();
+                        NxThemeInfo();
 
-                        StatusLabel.ForeColor = Color.Green;
-                        StatusLabel.Text = "Analysis Successfully";
+                        OutputLog("NxTheme Analysis", true);
                     }
                     catch (Exception ex)
                     {
-                        StatusLabel.ForeColor = Color.Red;
-                        StatusLabel.Text = $"Error : {ex.Message}";
-                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        OutputLog(ex.Message, false);
                     }
                 }
             }
         }
 
-        private void OutputLog()
+        private void NxThemeInfo()
         {
             byte[] fileData = File.ReadAllBytes(filePath);
 
@@ -90,13 +94,12 @@ namespace nxtheme_analyzer
                     {
                         try
                         {
-                            //Save To Image
                             ImageBox.Image.Save(dialog.FileName, ImageFormat.Jpeg);
-                            StatusLabel.Text = "Image Saved Successfully";
+                            LogTextBox.AppendText($"\r\nSuccess : Save Image {dialog.FileName}");
                         }
                         catch (Exception ex)
                         {
-                            StatusLabel.Text = $"Error : {ex.Message}";
+                            LogTextBox.AppendText($"\r\nError : {ex.Message}");
                         }
                     }
                 }
@@ -111,6 +114,22 @@ namespace nxtheme_analyzer
         private void SaveImageButton2_Click(object sender, EventArgs e)
         {
             SaveImageButton_Click(sender, e);
+        }
+
+        /// <param name="isStats">true : Success   |   false : Error</param>
+        private void OutputLog(string Message, bool isStats)
+        {
+            if (isStats == true)
+            {
+                StatusLabel.ForeColor = Color.Green;
+                StatusLabel.Text = $"Success : {Message}";
+            }
+            else
+            {
+                StatusLabel.ForeColor = Color.Red;
+                StatusLabel.Text = $"Error : {Message}";
+            }
+            WaitTimer.Start();
         }
     }
 }

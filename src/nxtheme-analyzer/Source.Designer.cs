@@ -59,6 +59,7 @@
             this.ReloadButton = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.SaveImageButton2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.WaitTimer = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -130,8 +131,8 @@
             // StatusLabel
             // 
             this.StatusLabel.Name = "StatusLabel";
-            this.StatusLabel.Size = new System.Drawing.Size(35, 17);
-            this.StatusLabel.Text = "Done";
+            this.StatusLabel.Size = new System.Drawing.Size(39, 17);
+            this.StatusLabel.Text = "Ready";
             // 
             // AuthorLabel
             // 
@@ -328,26 +329,31 @@
             this.toolStripMenuItem3,
             this.SaveImageButton2});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 76);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(166, 54);
             // 
             // ReloadButton
             // 
             this.ReloadButton.Name = "ReloadButton";
-            this.ReloadButton.Size = new System.Drawing.Size(180, 22);
+            this.ReloadButton.Size = new System.Drawing.Size(165, 22);
             this.ReloadButton.Text = "Reload ImageBox";
             this.ReloadButton.Click += new System.EventHandler(this.ReloadButton_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(162, 6);
             // 
             // SaveImageButton2
             // 
             this.SaveImageButton2.Name = "SaveImageButton2";
-            this.SaveImageButton2.Size = new System.Drawing.Size(180, 22);
+            this.SaveImageButton2.Size = new System.Drawing.Size(165, 22);
             this.SaveImageButton2.Text = "Save To Image";
             this.SaveImageButton2.Click += new System.EventHandler(this.SaveImageButton2_Click);
+            // 
+            // WaitTimer
+            // 
+            this.WaitTimer.Interval = 7000;
+            this.WaitTimer.Tick += new System.EventHandler(this.WaitTimer_Tick);
             // 
             // Source
             // 
@@ -415,6 +421,7 @@
         private System.Windows.Forms.ToolStripMenuItem ReloadButton;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem SaveImageButton2;
+        private System.Windows.Forms.Timer WaitTimer;
     }
 }
 
