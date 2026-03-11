@@ -86,7 +86,10 @@ namespace nxtheme_analyzer.utils
                     {
                         using (var ms = new MemoryStream(imageData))
                         {
-                            return Image.FromStream(ms);
+                            using (var original = Image.FromStream(ms))
+                            {
+                                return new Bitmap(original);
+                            }
                         }
                     }
                 }

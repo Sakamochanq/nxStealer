@@ -52,6 +52,8 @@
             this.ImageStatsLabel = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.PathBox = new System.Windows.Forms.TextBox();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.SaveImageButton = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -74,6 +76,7 @@
             this.fileFToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.NewButton,
             this.OpenButton,
+            this.toolStripMenuItem2,
             this.toolStripMenuItem1,
             this.ExitButton});
             this.fileFToolStripMenuItem.Name = "fileFToolStripMenuItem";
@@ -84,27 +87,27 @@
             // 
             this.NewButton.Name = "NewButton";
             this.NewButton.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.NewButton.Size = new System.Drawing.Size(145, 22);
+            this.NewButton.Size = new System.Drawing.Size(180, 22);
             this.NewButton.Text = "New";
             // 
             // OpenButton
             // 
             this.OpenButton.Name = "OpenButton";
             this.OpenButton.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.OpenButton.Size = new System.Drawing.Size(145, 22);
+            this.OpenButton.Size = new System.Drawing.Size(180, 22);
             this.OpenButton.Text = "Open";
             this.OpenButton.Click += new System.EventHandler(this.OpenButton_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(142, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
             // 
             // ExitButton
             // 
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.ExitButton.Size = new System.Drawing.Size(145, 22);
+            this.ExitButton.Size = new System.Drawing.Size(180, 22);
             this.ExitButton.Text = "Exit";
             // 
             // statusStrip1
@@ -294,6 +297,23 @@
             this.PathBox.Size = new System.Drawing.Size(582, 19);
             this.PathBox.TabIndex = 17;
             // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.SaveImageButton});
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem2.Text = "Save";
+            // 
+            // SaveImageButton
+            // 
+            this.SaveImageButton.Name = "SaveImageButton";
+            this.SaveImageButton.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.S)));
+            this.SaveImageButton.Size = new System.Drawing.Size(192, 22);
+            this.SaveImageButton.Text = "To Image";
+            this.SaveImageButton.Click += new System.EventHandler(this.SaveImageButton_Click);
+            // 
             // Source
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -353,6 +373,8 @@
         private System.Windows.Forms.Label ImageStatsLabel;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox PathBox;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem SaveImageButton;
     }
 }
 

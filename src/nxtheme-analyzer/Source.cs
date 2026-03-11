@@ -1,10 +1,9 @@
 ﻿using nxtheme_analyzer.utils;
 using System;
+using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Windows.Forms;
-using System.Drawing;
-using static System.Windows.Forms.DataFormats;
-using System.Drawing.Imaging;
 
 namespace nxtheme_analyzer
 {
@@ -75,6 +74,33 @@ namespace nxtheme_analyzer
 
             LogTextBox.AppendText($"Decompressed size : {decompressed.Length:N0} byte\r\n");
             LogTextBox.AppendText($"First 4 byte : {decompressed[0]:X2} {decompressed[1]:X2} {decompressed[2]:X2} {decompressed[3]:X2}\r\n");
+        }
+
+        private void SaveImageButton_Click(object sender, EventArgs e)
+        {
+            if (ImageBox.Image == null)
+            {
+                return;
+            }
+            else
+            {
+                using (SaveFileDialog dialog = new SaveFileDialog() { Filter = "JPEG (*.jpg;) | *.jpg", FileName = TargetLabel.Text })
+                {
+                    if (dialog.ShowDialog() == DialogResult.OK)
+                    {
+                        try
+                        {
+                            //Save To Image
+                            ImageBox.Image.Save(dialog.FileName, ImageFormat.Jpeg);
+                            StatusLabel.Text = "Image Saved Successfully";
+                        }
+                        catch (Exception ex)
+                        {
+                            StatusLabel.Text = $"Error : {ex.Message}";
+                        }
+                    }
+                }
+            }
         }
     }
 }
