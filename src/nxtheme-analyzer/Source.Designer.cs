@@ -33,6 +33,8 @@
             this.fileFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.NewButton = new System.Windows.Forms.ToolStripMenuItem();
             this.OpenButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.SaveImageButton = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.ExitButton = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -49,16 +51,14 @@
             this.LogTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.ImageBox = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.ImageStatsLabel = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.PathBox = new System.Windows.Forms.TextBox();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.SaveImageButton = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ReloadButton = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.SaveImageButton2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.label6 = new System.Windows.Forms.Label();
+            this.ImageStatsLabel = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.PathBox = new System.Windows.Forms.TextBox();
             this.WaitTimer = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -96,6 +96,7 @@
             this.NewButton.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
             this.NewButton.Size = new System.Drawing.Size(180, 22);
             this.NewButton.Text = "New";
+            this.NewButton.Click += new System.EventHandler(this.NewButton_Click_1);
             // 
             // OpenButton
             // 
@@ -104,6 +105,23 @@
             this.OpenButton.Size = new System.Drawing.Size(180, 22);
             this.OpenButton.Text = "Open";
             this.OpenButton.Click += new System.EventHandler(this.OpenButton_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.SaveImageButton});
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem2.Text = "Save";
+            // 
+            // SaveImageButton
+            // 
+            this.SaveImageButton.Name = "SaveImageButton";
+            this.SaveImageButton.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.S)));
+            this.SaveImageButton.Size = new System.Drawing.Size(192, 22);
+            this.SaveImageButton.Text = "To Image";
+            this.SaveImageButton.Click += new System.EventHandler(this.SaveImageButton_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -116,6 +134,7 @@
             this.ExitButton.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
             this.ExitButton.Size = new System.Drawing.Size(180, 22);
             this.ExitButton.Text = "Exit";
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // statusStrip1
             // 
@@ -265,6 +284,34 @@
             this.ImageBox.TabIndex = 15;
             this.ImageBox.TabStop = false;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ReloadButton,
+            this.toolStripMenuItem3,
+            this.SaveImageButton2});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(166, 54);
+            // 
+            // ReloadButton
+            // 
+            this.ReloadButton.Name = "ReloadButton";
+            this.ReloadButton.Size = new System.Drawing.Size(165, 22);
+            this.ReloadButton.Text = "Reload ImageBox";
+            this.ReloadButton.Click += new System.EventHandler(this.ReloadButton_Click);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(162, 6);
+            // 
+            // SaveImageButton2
+            // 
+            this.SaveImageButton2.Name = "SaveImageButton2";
+            this.SaveImageButton2.Size = new System.Drawing.Size(165, 22);
+            this.SaveImageButton2.Text = "Save To Image";
+            this.SaveImageButton2.Click += new System.EventHandler(this.SaveImageButton2_Click);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -304,51 +351,6 @@
             this.PathBox.ReadOnly = true;
             this.PathBox.Size = new System.Drawing.Size(582, 19);
             this.PathBox.TabIndex = 17;
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.SaveImageButton});
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItem2.Text = "Save";
-            // 
-            // SaveImageButton
-            // 
-            this.SaveImageButton.Name = "SaveImageButton";
-            this.SaveImageButton.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.S)));
-            this.SaveImageButton.Size = new System.Drawing.Size(192, 22);
-            this.SaveImageButton.Text = "To Image";
-            this.SaveImageButton.Click += new System.EventHandler(this.SaveImageButton_Click);
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ReloadButton,
-            this.toolStripMenuItem3,
-            this.SaveImageButton2});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(166, 54);
-            // 
-            // ReloadButton
-            // 
-            this.ReloadButton.Name = "ReloadButton";
-            this.ReloadButton.Size = new System.Drawing.Size(165, 22);
-            this.ReloadButton.Text = "Reload ImageBox";
-            this.ReloadButton.Click += new System.EventHandler(this.ReloadButton_Click);
-            // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(162, 6);
-            // 
-            // SaveImageButton2
-            // 
-            this.SaveImageButton2.Name = "SaveImageButton2";
-            this.SaveImageButton2.Size = new System.Drawing.Size(165, 22);
-            this.SaveImageButton2.Text = "Save To Image";
-            this.SaveImageButton2.Click += new System.EventHandler(this.SaveImageButton2_Click);
             // 
             // WaitTimer
             // 

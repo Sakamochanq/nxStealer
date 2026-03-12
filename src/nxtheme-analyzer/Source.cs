@@ -25,7 +25,7 @@ namespace nxtheme_analyzer
 
         private void OpenButton_Click(object sender, EventArgs e)
         {
-            using (var ofd = new OpenFileDialog() { Filter = "nxtheme File (*.nxtheme) | *.nxtheme;" })
+            using (var ofd = new OpenFileDialog() { Filter = "nxtheme File (*.nxtheme) | *.nxtheme; | All Files (*.) | *.*;" })
             {
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
@@ -56,6 +56,23 @@ namespace nxtheme_analyzer
                     }
                 }
             }
+        }
+
+        private void NewButton_Click_1(object sender, EventArgs e)
+        {
+            PathBox.Text = "";
+            AuthorLabel.Text = "---";
+            NameLabel.Text = "---";
+            VersionLabel.Text = "---";
+            TargetLabel.Text = "---";
+            ImageBox.Image = null;
+            LogTextBox.Clear();
+            OutputLog("Cleared", true);
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
         private void NxThemeInfo()
