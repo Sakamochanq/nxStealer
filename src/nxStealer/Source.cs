@@ -1,11 +1,11 @@
-﻿using nxtheme_analyzer.utils;
+﻿using nxStealer.utils;
 using System;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Windows.Forms;
 
-namespace nxtheme_analyzer
+namespace nxStealer
 {
     public partial class Source : Form
     {

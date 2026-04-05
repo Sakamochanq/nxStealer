@@ -3,7 +3,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Text.Json;
 
-namespace nxtheme_analyzer.utils
+namespace nxStealer.utils
 {
     internal class NxTheme
     {

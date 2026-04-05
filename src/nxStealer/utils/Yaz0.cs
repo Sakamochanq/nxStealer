@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace nxtheme_analyzer.utils
+namespace nxStealer.utils
 {
     internal class Yaz0
     {

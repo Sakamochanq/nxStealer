@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace nxtheme_analyzer.utils
+namespace nxStealer.utils
 {
     internal class Sarc
     {

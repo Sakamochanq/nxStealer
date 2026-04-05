@@ -1,5 +1,5 @@
 <div align="center">
-    <h1>nxtheme-analyzer</h1>
+    <h1>nxStealer</h1>
 </div>
 
 <br>
