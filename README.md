@@ -31,7 +31,7 @@ which currently limits the files that can be analyzed. I plan to fix these issue
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/Sakamochanq/nxtheme-analyzer.git
+git clone https://github.com/Sakamochanq/nxStealer.git
 ```
 
 <br>
